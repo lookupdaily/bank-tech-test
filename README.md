@@ -1,0 +1,111 @@
+# Bank tech test
+
+This is a tech test completed to improve my code quality, whilst enrolled at Makers Academy. 
+
+### Technology used
+
+This programme is written in vanilla JavaScript, tests are written using Jasmine.
+
+### Getting started
+
+You can interact with this programme from the JavaScript console in your browser:
+
+1. Clone this repo
+2. Open index.html
+3. Open your browser's dev tools and visit the console tab
+
+### Useage
+
+*Coming soon*
+
+### Running tests
+
+1. Open `SpecRunner.html` to run tests.
+
+## Specification
+
+### Requirements
+
+A programme which allows a user to make deposits or withdraw money from their bank account. The user is able to print a statement of recent deposits and withdrawals and the account balance.
+
+### Acceptance criteria
+
+- **Given** a client makes a deposit of 1000 on 10-01-2012
+- **And** a deposit of 2000 on 13-01-2012
+- **And** a withdrawal of 500 on 14-01-2012
+- **When** she prints her bank statement
+- **Then** she would see
+
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
+
+## Planning
+
+### Example code
+```
+bank = new Bank()
+account = new Account
+
+bank.credit(account,200)
+bank.debit(account,100)
+bank.printStatement(account)
+```
+
+### User stories
+```
+As a bank user, 
+So that I can manage my finances,
+I would like to be able to set up an account with the bank
+
+As a bank user, 
+So that I can save money, 
+I would like to be able to be able to deposit money in my account
+
+As a bank user, 
+So that I can tell how much money I've saved,
+I would like my bank to keep track of how much money is in my account
+
+As a bank user,
+So that I can spend money,
+I would like to be able to wihdraw money from my account
+
+As a bank user,
+So that I can monitor my spending and saving habits,
+I would like my bank to remember the dates I made my deposits and withrawals
+
+As a bank user,
+So that I can monitor my spending and saving habits,
+I would like my bank to remember how much money I deposited or withdrew from my account each time
+
+As a bank user,
+So that I can monitor my spending and saving habits, 
+I would like my bank to store the state of my balance alongside each deposit or withdrawal
+
+As a bank user,
+So that I can check my banking history, 
+I would like to be able to print a list of my withdrawals and deposits, along with my balance.
+```
+
+### Inputs/Outputs
+
+Assuming a starting balance of 0
+
+|Status|Input                 |Output              |Scenario         |
+|------|----------------------|--------------------|-----------------|
+|+     |bank.credit(account, 1)| {date: 13/01/2012, credit: 1, debit: 0, balance: 1} | user deposits 1 in their account |
+|+     |account, 100|account.balance = 2 |  
+
+
+
+
+
+### Class diagrams
+
+
+
+
+
