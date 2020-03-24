@@ -9,4 +9,3 @@ Account.prototype.getBalance = function() {
 Account.prototype.credit = function(amount) {
   return this._balance += amount;
 };
-
