@@ -37,10 +37,10 @@ A programme which allows a user to make deposits or withdraw money from their ba
 - **Then** she would see
 
 ```
-date       || credit  || debit  || balance
-14/01/2012 ||         || 500.00 || 2500.00
-13/01/2012 || 2000.00 ||        || 3000.00
-10/01/2012 || 1000.00 ||        || 1000.00
+date || credit || debit  || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
 ```
 
 ## Planning
@@ -88,6 +88,10 @@ I would like my bank to store the state of my balance alongside each deposit or 
 As a bank user,
 So that I can check my banking history, 
 I would like to be able to print a list of my withdrawals and deposits, along with my balance.
+
+As a bank user,
+So that I can check my banking history in order,
+I would like my printed statement to be ordered in reverse chronological order
 ```
 
 ### Class diagrams

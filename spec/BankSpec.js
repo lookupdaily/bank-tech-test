@@ -1,20 +1,12 @@
 describe("Bank", function() {
   var bank;
+  var account;
 
   beforeEach(function() {
-    bank= new Bank();
+    bank = new Bank();
   });
 
-  it("statement", function() {
-   
-  });
-
-  describe("scenario", function() {
-    beforeEach(function() {
-    });
-
-    it("statement", function() {
-    });
-  });
-  
-});
+  it("can print a blank statement with headers", function() {
+    expect(bank.printStatement(account)).toBe("date || credit || debit  || balance")
+  })
+})
