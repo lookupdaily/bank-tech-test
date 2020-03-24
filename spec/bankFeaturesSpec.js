@@ -10,5 +10,12 @@ describe("Bank Interactions", function() {
   it("prints a statement", function() {
     expect(bank.printStatement(account)).toBe("date || credit || debit  || balance");
   });
+
+  describe("when user makes one transaction", function() {
+    it("adds one line to account statement for a deposit", function() {
+      bank.deposit(account, 1);
+      expect(bank.printStatement(account)).toBe("date || credit || debit  || balance\n24/03/2020 || 1 ||  || 1")
+    })
+  })
   
 });

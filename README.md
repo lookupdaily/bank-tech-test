@@ -98,17 +98,22 @@ I would like my printed statement to be ordered in reverse chronological order
 
 *Container for user interactions with account:*
 
-| Object:           |**Bank**      |        |              |
-|:-----------------:|:------------:|:------:|:------------:|
-|**Attributes:**    |              |        |              |
-|**Public Methods:**|Deposit       |Withdraw|PrintStatement|
+| Object:           |**Bank**|        |              |
+|:-----------------:|:------:|:------:|:------------:|
+|**Attributes:**    |        |        |              |
+|**Public Methods:**|Deposit |Withdraw|PrintStatement|
 
 *Container for individual account state:*
-|Object:            |**Account**  |              |
-|:-----------------:|:-----------:|:------------:|
-|**Attributes:**    |Balance      |History       |
-|**Public Methods** |Credit       |Debit         |
-|**Private methods**|LogAction    |              |
+|Object:            |**Account**|       |
+|:-----------------:|:---------:|:-----:|
+|**Attributes:**    |Balance    |History|
+|**Public Methods** |Credit     |Debit  |
+|**Private methods**|addStatementLine | |
+
+*Container for account history records:*
+|Object:        |**statementLine**|  | |  |
+|:-------------:|:--:|:----:|:---:|:-----:|
+|**Attributes:**|Date|Credit|Debit|Balance|
 
 ### Inputs/Outputs
 
