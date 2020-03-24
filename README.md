@@ -37,10 +37,10 @@ A programme which allows a user to make deposits or withdraw money from their ba
 - **Then** she would see
 
 ```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+date       || credit  || debit  || balance
+14/01/2012 ||         || 500.00 || 2500.00
+13/01/2012 || 2000.00 ||        || 3000.00
+10/01/2012 || 1000.00 ||        || 1000.00
 ```
 
 ## Planning
@@ -90,20 +90,32 @@ So that I can check my banking history,
 I would like to be able to print a list of my withdrawals and deposits, along with my balance.
 ```
 
+### Class diagrams
+
+*Container for user interactions with account:*
+
+| Object:           |**Bank**      |        |              |
+|:-----------------:|:------------:|:------:|:------------:|
+|**Attributes:**    |              |        |              |
+|**Public Methods:**|Deposit       |Withdraw|PrintStatement|
+
+*Container for individual account state:*
+|Object:            |**Account**  |              |
+|:-----------------:|:-----------:|:------------:|
+|**Attributes:**    |Balance      |History       |
+|**Public Methods** |Credit       |Debit         |
+|**Private methods**|LogAction    |              |
+
 ### Inputs/Outputs
 
+The following inputs are written from user perspective
 Assuming a starting balance of 0
+To set up each test we will need a new bank and a new class object.
 
-|Status|Input                 |Output              |Scenario         |
-|------|----------------------|--------------------|-----------------|
-|+     |bank.credit(account, 1)| {date: 13/01/2012, credit: 1, debit: 0, balance: 1} | user deposits 1 in their account |
-|+     |account, 100|account.balance = 2 |  
-
-
-
-
-
-### Class diagrams
+|Status|Input                       |Output                     |Scenario                                      |
+|------|----------------------------|---------------------------|----------------------------------------------|
+|+     |bank.printStatement(account)|"date-credit-debit-balance"|bank prints a blank statement on a new account| 
+|+     |bank.deposit(account, 1), bank.printStatement(account)|"date-credit-debit-balance\n23/03/2020-1- -1"|user deposits £1 in account                   |
 
 
 
