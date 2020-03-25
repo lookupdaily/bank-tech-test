@@ -13,7 +13,7 @@ Account.prototype.getAccountHistory = function() {
 
 Account.prototype.credit = function(amount) {
   this._balance += amount;
-  return this._accountHistory.push({date: Date.now(), credit: amount, balance: this._balance})
+  return this._accountHistory.push({date: new Date(), credit: amount, balance: this._balance})
 };
 
 

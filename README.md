@@ -124,7 +124,7 @@ To set up each test we will need a new bank and a new class object.
 |Status|Input                       |Output                     |Scenario                                      |
 |------|----------------------------|---------------------------|----------------------------------------------|
 |+     |bank.printStatement(account)|"date-credit-debit-balance"|bank prints a blank statement on a new account| 
-|+     |bank.deposit(account, 1), bank.printStatement(account)|"date-credit-debit-balance\n23/03/2020-1- -1"|user deposits £1 in account                   |
+|+     |bank.deposit(account, 1), bank.printStatement(account)|"date-credit-debit-balance\n23/03/2020-1- -1"|user deposits £1 in account|
 
 
 

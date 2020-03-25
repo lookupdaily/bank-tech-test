@@ -1,4 +1,4 @@
-describe("Bank Interactions", function() {
+describe("Bank Features", function() {
   var bank;
   var account;
 
@@ -14,7 +14,7 @@ describe("Bank Interactions", function() {
   describe("when user makes one transaction", function() {
     it("adds one line to account statement for a deposit", function() {
       bank.deposit(account, 1);
-      expect(bank.printStatement(account)).toBe("date || credit || debit  || balance\n24/03/2020 || 1 ||  || 1")
+      expect(bank.printStatement(account)).toBe(`date || credit || debit  || balance\n${(new Date()).toLocaleDateString('en-GB')} || 1 ||  || 1`)
     })
   })
   
