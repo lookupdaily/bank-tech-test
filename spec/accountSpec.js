@@ -28,11 +28,11 @@ describe("Account", function() {
 
     it("logs the date, credit amount and new balance in the account history", function() {
       expect(account.getAccountHistory()[0]).toEqual(jasmine.objectContaining({
-        date: Date.now(), 
+        // date: Date.now(), 
         credit: 1,
         balance: 1
-      }))
-    })
+      }));
+    });
 
   });
 

@@ -16,3 +16,4 @@ Account.prototype.credit = function(amount) {
   return this._accountHistory.push({date: Date.now(), credit: amount, balance: this._balance})
 };
 
+
