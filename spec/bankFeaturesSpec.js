@@ -16,6 +16,12 @@ describe("Bank Features", function() {
       bank.deposit(account, 1);
       expect(bank.printStatement(account)).toBe(`date || credit || debit  || balance\n${(new Date()).toLocaleDateString('en-GB')} || 1 ||  || 1`)
     })
+
+    it("adds one line to the account statement for a withdrawal", function() {
+      account._balance = 2
+      bank.withdraw(account, 1);
+      expect(bank.printStatement(account)).toBe(`date || credit || debit  || balance\n${(new Date()).toLocaleDateString('en-GB')} ||  || 1 || 1`)
+    })
   })
   
 });

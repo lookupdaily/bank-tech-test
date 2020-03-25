@@ -16,4 +16,7 @@ Account.prototype.credit = function(amount) {
   return this._accountHistory.push({date: new Date(), credit: amount, balance: this._balance})
 };
 
-
+Account.prototype.debit = function(amount) {
+  this._balance -= amount;
+  return this._accountHistory.push({date: new Date(), debit: amount, balance: this._balance})
+}
