@@ -14,7 +14,8 @@ Bank.prototype.printStatement = function(account) {
   var accountHistory = account.getAccountHistory()
   for(var i = 0; i < accountHistory.length; i++) {
     var line = accountHistory[i]
-    statement += `\n${line.date.toLocaleDateString('en-GB')} || ${line.credit} || ${line.debit} || ${line.balance}`
+    var newLine = `\n${line.date.toLocaleDateString('en-GB')} || ${line.credit} || ${line.debit} || ${line.balance}`
+    statement += newLine.replace(null, "")
   }
-  return statement.replace(null, "")
+  return statement
 }
