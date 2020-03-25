@@ -51,7 +51,7 @@ describe("Account", function() {
       expect(account.getAccountHistory().length).toEqual(1)
     })
 
-    it("logs the date, credit amount and new balance in a new line in the account history", function() {
+    it("logs the date, debit amount and new balance in a new line in the account history", function() {
       expect(account.getAccountHistory()[0]).toEqual(jasmine.objectContaining({
         date: new Date(), 
         debit: 1,

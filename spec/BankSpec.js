@@ -1,24 +1,32 @@
 describe("Bank", function() {
-  var bank;
+  var bank
   var account
 
   beforeEach(function() {
     bank = new Bank()
     account = {
       credit: function(value) {
-        return value
       },
-      getAccountHistory: function() {
-        return 1
+      debit: function(value) {
+      },
+      getAccountHistory: function() { 
       }
     }
   })
 
-  describe("depositing in an account", function() {
-    it("tracks that account.credit was called", function() {
+  describe("depositing to an account", function() {
+    it("tracks that account.credit was called with amount", function() {
       spyOn(account, 'credit')
       bank.deposit(account, 1)
       expect(account.credit).toHaveBeenCalledWith(1);
+    })
+  })
+
+  describe("withdrawing from an account", function() {
+    it("tracks that account.credit was called with amount", function() {
+      spyOn(account, 'debit')
+      bank.withdraw(account, 1)
+      expect(account.debit).toHaveBeenCalledWith(1);
     })
   })
 
@@ -29,7 +37,7 @@ describe("Bank", function() {
     })
 
     it("can print one line history with just debit amount", function() {
-      spyOn(account, 'getAccountHistory').and.returnValue([{date: new Date(), credit: 1, balance: 1}])
+      spyOn(account, 'getAccountHistory').and.returnValue([{date: new Date(), credit: 1, debit: null, balance: 1}])
       expect(bank.printStatement(account)).toEqual(`date || credit || debit  || balance\n${(new Date()).toLocaleDateString('en-GB')} || 1 ||  || 1`)
     })
   })

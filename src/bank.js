@@ -1,4 +1,4 @@
-Bank = function() {
+function Bank() {
 }
 
 Bank.prototype.printStatement = function(account) {
@@ -8,7 +8,7 @@ Bank.prototype.printStatement = function(account) {
     var line = accountHistory[i]
     statement += `\n${line.date.toLocaleDateString('en-GB')} || ${line.credit} || ${line.debit} || ${line.balance}`
   }
-  return statement.replace(undefined, "")
+  return statement.replace(null, "")
 }
 
 Bank.prototype.deposit = function(account, amount) {
