@@ -29,7 +29,7 @@ describe("Bank", function() {
     })
 
     it("can print one line history with just debit amount", function() {
-      spyOn(account, 'getAccountHistory').and.returnValue([{date: new Date(), credit: 1, debit: null, balance: 1}])
+      spyOn(account, 'getAccountHistory').and.returnValue([{date: new Date(), credit: 1, balance: 1}])
       expect(bank.printStatement(account)).toEqual(`date || credit || debit  || balance\n${(new Date()).toLocaleDateString('en-GB')} || 1 ||  || 1`)
     })
   })

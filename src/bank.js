@@ -6,9 +6,9 @@ Bank.prototype.printStatement = function(account) {
   var accountHistory = account.getAccountHistory()
   for(var i = 0; i < accountHistory.length; i++) {
     var line = accountHistory[i]
-    statement += `\n${line.date.toLocaleDateString('en-GB')} || ${line.credit} ||  || ${line.balance}`
+    statement += `\n${line.date.toLocaleDateString('en-GB')} || ${line.credit} || ${line.debit} || ${line.balance}`
   }
-  return statement
+  return statement.replace(undefined, "")
 }
 
 Bank.prototype.deposit = function(account, amount) {

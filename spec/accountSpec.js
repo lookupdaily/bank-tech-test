@@ -37,7 +37,7 @@ describe("Account", function() {
     })
   })
 
-  describe("when account is credited", function() {
+  describe("when account is debited", function() {
     beforeEach(function() {
       account._balance = 2
       account.debit(1)
