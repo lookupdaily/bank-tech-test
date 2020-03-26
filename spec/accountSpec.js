@@ -14,7 +14,7 @@ describe("Account", function() {
       expect(account.getAccountHistory()).toEqual([])
     })
   })
-    
+  
   describe("when account is credited", function() {
     beforeEach(function() {
       account.credit(1)
@@ -28,13 +28,6 @@ describe("Account", function() {
       expect(account.getAccountHistory().length).toEqual(1)
     })
 
-    it("logs the date, credit amount and new balance in a new line in the account history", function() {
-      expect(account.getAccountHistory()[0]).toEqual(jasmine.objectContaining({
-        date: new Date(), 
-        credit: 1,
-        balance: 1
-      }))
-    })
   })
 
   describe("when account is debited", function() {
@@ -51,12 +44,10 @@ describe("Account", function() {
       expect(account.getAccountHistory().length).toEqual(1)
     })
 
-    it("logs the date, debit amount and new balance in a new line in the account history", function() {
-      expect(account.getAccountHistory()[0]).toEqual(jasmine.objectContaining({
-        date: new Date(), 
-        debit: 1,
-        balance: 1
-      }))
+    it("throws an error if debit will take balance below 0", function() {
+      expect(function() {
+        account.debit(2)
+      }).toThrowError("Insufficient funds")
     })
   })
 })

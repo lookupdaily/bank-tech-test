@@ -17,6 +17,7 @@ Account.prototype.credit = function(amount) {
 };
 
 Account.prototype.debit = function(amount) {
+  if(this._balance - amount < 0) throw new Error("Insufficient funds")
   this._balance -= amount;
   this.addStatementLine({debit: amount, balance: this._balance})
 }

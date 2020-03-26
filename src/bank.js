@@ -1,11 +1,15 @@
+'use strict';
+
 function Bank() {
 }
 
 Bank.prototype.deposit = function(account, amount) {
+  if(amount < 1) throw new Error("Cannot deposit less than £1")
   account.credit(amount)
 }
 
 Bank.prototype.withdraw = function(account, amount) {
+  if(amount < 1) throw new Error("Cannot withdraw less than £1")
   account.debit(amount)
 }
 

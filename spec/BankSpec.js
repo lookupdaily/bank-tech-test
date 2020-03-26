@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Bank", function() {
   var bank
   var account
@@ -21,6 +23,17 @@ describe("Bank", function() {
       expect(account.credit).toHaveBeenCalledWith(1);
     })
 
+    it("throws an error if user tries to deposit 0", function() {
+      expect(function() {
+        bank.deposit(account, 0)
+      }).toThrowError("Cannot deposit less than £1")
+    })
+
+    it("throws an error if user tries to deposit a negative amount", function() {
+      expect(function() {
+        bank.deposit(account, -1)
+      }).toThrowError("Cannot deposit less than £1")
+    })
   })
 
   describe("withdrawing from an account", function() {
@@ -28,6 +41,18 @@ describe("Bank", function() {
       spyOn(account, 'debit')
       bank.withdraw(account, 1)
       expect(account.debit).toHaveBeenCalledWith(1);
+    })
+
+    it("throws an error if user tries to deposit 0", function() {
+      expect(function() {
+        bank.withdraw(account, 0)
+      }).toThrowError("Cannot withdraw less than £1")
+    })
+
+    it("throws an error if user tries to deposit a negative amount", function() {
+      expect(function() {
+        bank.withdraw(account, -1)
+      }).toThrowError("Cannot withdraw less than £1")
     })
   })
 
