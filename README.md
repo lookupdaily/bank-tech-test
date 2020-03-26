@@ -118,15 +118,20 @@ I would like my printed statement to be ordered in reverse chronological order
 ### Inputs/Outputs
 
 The following inputs are written from user perspective
-Assuming a starting balance of 0
+Assuming a starting balance of 0 unless otherwise noted
 To set up each test we will need a new bank and a new class object.
 
 |Status|Input                       |Output                     |Scenario                                      |
 |------|----------------------------|---------------------------|----------------------------------------------|
-|+     |bank.printStatement(account)|"date-credit-debit-balance"|bank prints a blank statement on a new account| 
-|+     |bank.deposit(account, 1), bank.printStatement(account)|"date-credit-debit-balance\n23/03/2020-1- -1"|user deposits £1 in account|
-
-
+|+|bank.printStatement(account)|"date-credit-debit-balance"|bank prints a blank statement on a new account| 
+|+|bank.deposit(account, 1), bank.printStatement(account)|"date-credit-debit-balance\n23/03/2020-1- -1"|user deposits £1 in account|
+|+|bank.withdraw(account,1), bank.printStatement(account)|"date-credit-debit-balance\n23/03/2020- -1-1"|user withdraws £1 from account (account balance set to 2)|
+|+|bank.deposit(account,2), bank.withdraw(account,1), bank.printStatement(account)|"date-credit-debit-balance\n23/03/2020- -1-1\n23/03/2020-2- -2"|user creates two transactions and printed statement is in reverse chronological order|
+|+|bank.withdraw(account,0)|Error('Can't withdraw less than £1')|User tries to withdraw no money|
+|+|bank.deposit(account,0)|Error('Can't deposit less than £1')|User tries to deposit no money|
+|+|bank.withdraw(account,-1)|Error('Can't withdraw less than £1')|User tries to withdraw negative amount|
+|+|bank.deposit(account,-1)|Error('Can't deposit less than £1')|User tries to deposit negative amount|
+|+|bank.withdraw(account,1)|Error('Not enough money in your balance to withdraw this amount')|User can't take their balance below 0|
 
 
 
