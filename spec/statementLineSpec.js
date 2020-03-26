@@ -39,7 +39,5 @@ describe("Statement Line", function() {
     it("records null for debit", function() {
       expect(statementLine.credit).toEqual(null)
     })
-
   })
-  
 })

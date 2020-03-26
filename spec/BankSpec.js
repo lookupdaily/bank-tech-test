@@ -20,6 +20,7 @@ describe("Bank", function() {
       bank.deposit(account, 1)
       expect(account.credit).toHaveBeenCalledWith(1);
     })
+
   })
 
   describe("withdrawing from an account", function() {
@@ -40,8 +41,6 @@ describe("Bank", function() {
       spyOn(account, 'getAccountHistory').and.returnValue([{date: new Date(), credit: 1, debit: null, balance: 1}])
       expect(bank.printStatement(account)).toEqual(`date || credit || debit  || balance\n${(new Date()).toLocaleDateString('en-GB')} || 1 ||  || 1`)
     })
-
-    
 
     it("prints multiple actions in reverse chronological order", function(){
       var date1 = new Date('Thu Mar 24 2020 09:30:00 GMT+0000')
