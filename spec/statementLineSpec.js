@@ -1,4 +1,4 @@
-describe("statementLine", function() {
+describe("Statement Line", function() {
   var statementLine
 
   beforeEach(function() {
